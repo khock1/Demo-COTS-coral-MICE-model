@@ -1,5 +1,8 @@
 function [e] = cots_estimated_params()
 
+% Implementation of a published MICE model by Morello et al. 2014, MEPS
+% Karlo Hock, University of Queensland, v1 2014; v2 2019
+
 % Estimated parameters for the COTS-coral MICE model from Morello et al. 2014, MEPS
 
 e=struct();
