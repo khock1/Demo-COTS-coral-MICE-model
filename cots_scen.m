@@ -8,7 +8,7 @@ function [ scenario ] = cots_scen( scen, variant )
 p=cots_param;
 scenario=struct();
 switch scen
-    case 1%explore scenarios with varying impacts of fish predators on COTS
+    case 1%explore scenarios with different impacts of fish predators on COTS
         scenario.inv_biomassavg=p.INV_BIOMASSAVG;%B line
         scenario.inv_mortoncots0=p.INV_MORTONCOTS0;
         scenario.cots_manremselectivity1=p.COTS_MANREMSELECTIVITY1;
@@ -24,7 +24,7 @@ switch scen
                 scenario.lfp_effectoffgc=0.3;%p tilde tilde
                 scenario.cots_largpred1=0.03;%p 1 cots
         end
-    case 2%explore scenarios with varying impacts effects of invertebrate predators on COTS juveniles
+    case 2%explore scenarios with different impacts effects of invertebrate predators on COTS juveniles
         scenario.inv_biomassavg=1;%B line
         scenario.lfp_effectoffgc=p.LFP_EFFECTOFFGC;
         scenario.cots_largpred1=p.COTS_LARGPRED1;
@@ -44,7 +44,7 @@ switch scen
             case 5
                 scenario.inv_mortoncots0=0.15;%F I
         end
-    case 3%explore scenarios with varying effectivenesss of control program removal on COTS adults
+    case 3%explore scenarios with different effectivenesss of control program removal on COTS adults
         scenario.inv_biomassavg=p.INV_BIOMASSAVG;%B line
         scenario.inv_mortoncots0=p.INV_MORTONCOTS0;%F I
         scenario.lfp_effectoffgc=p.LFP_EFFECTOFFGC;%p tilde tilde
