@@ -1,5 +1,8 @@
 classdef cots_param
 
+% Implementation of a published MICE model by Morello et al. 2014, MEPS
+% Karlo Hock, University of Queensland, v1 2014; v2 2019
+
 % Fixed parameters for the COTS-coral MICE model from Morello et al. 2014, MEPS
     
     properties (Constant = true)
