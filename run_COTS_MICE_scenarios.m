@@ -1,6 +1,7 @@
 % Implementation of a published MICE model by Morello et al. 2014, MEPS
 % Karlo Hock, University of Queensland, v1 2014; v2 2019
 
+% COTS-coral MICE (Model of Intermediate Complexity for Ecosystem Assessment) with intervention scenarios
 % This is just a demo of the Matlab implementation; not to be used for scientific or management purposes; 
 % refer to the original publication for model definition and details
 
