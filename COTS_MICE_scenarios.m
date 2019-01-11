@@ -10,6 +10,7 @@ function [ results ] = COTS_MICE_scenarios( years, scen, variant  )
 % This is just a demo of the Matlab implementation; not to be used for scientific or management purposes; 
 % refer to the original publication for model definition and details
 
+% Standard setup for testing
 if years==0 
     years = 18;
 end
@@ -18,12 +19,12 @@ if scen==0
     variant=0;
 end
 
-%fixed parameters
+% initalise fixed parameters for the MICE model
 p=cots_param;
 
-%these parameters are variable/uncertain as they ahv ebeen estiamted from
-%the data; if fixed values are desirable for testing, comment this line and
-%uncomment the lines just below that specify fields for structure e below
+% some parameters are variable/uncertain as they have been estimated from
+% the data; if fixed values are to be used for testing, comment out the line below and
+% uncomment the subsequent lines that specify the fields for the structure e
 e=cots_estimated_params;
 
 % e=struct();
@@ -36,7 +37,7 @@ e=cots_estimated_params;
 % e.SGC_EFFECTOFCOTS1=0.268;%p m
 
 
-%variables
+% variables----------------------------------------------
 cots_num=zeros(years,3);%N per year per age
 cots_selfrec=zeros(years,1);%R per year
 cots_eatenbypred=zeros(years,3);%Q cots per year per age
@@ -56,8 +57,8 @@ cots_stockrecres(4,1)=e.COTS_STOCKRECRINIT;
 cots_immigr=zeros(years,1);
 cots_immigr(1,1)=e.COTS_IMMIGINIT;
 cots_resid=zeros(years,1);
-cots_resid(3,1)=4.307;
-scenario  = cots_scen( scen, variant );
+cots_resid(3, 1)=4.307;
+scenario = cots_scen( scen, variant );
 
 cots_num(1,1)=e.COTS_NUMINIT*(exp(2*e.COTS_MORTNAT));
 cots_num(1,2)=e.COTS_NUMINIT*(exp(e.COTS_MORTNAT));
@@ -65,7 +66,7 @@ cots_num(1,3)=e.COTS_NUMINIT;
 fgc_biomass(1)=p.FGC_CARRYCAP;
 sgc_biomass(1)=p.SGC_CARRYCAP;
 
-%MICE population dynamics
+% MICE population dynamics------------------------------------
 for yr=2:years
     fgc_effcotsmort(yr-1)=1-(e.FGC_EFFECTONCOTS*fgc_biomass(yr-1)*(1/(1+fgc_biomass(yr-1))));
     fgc_effpredsurv(yr-1)=1-(scenario.lfp_effectoffgc*fgc_biomass(yr-1)*(1/(1+fgc_biomass(yr-1))));
@@ -91,7 +92,7 @@ for yr=2:years
     
 end
 
-%return results
+% return results-----------------------------------------------
 results=struct();
 results.cots_num=cots_num;
 results.fgc_biomass=fgc_biomass;
