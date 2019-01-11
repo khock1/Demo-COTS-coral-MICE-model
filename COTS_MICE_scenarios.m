@@ -5,6 +5,7 @@ function [ results ] = COTS_MICE_scenarios( years, scen, variant  )
 % Implementation of a published MICE model by Morello et al. 2014, MEPS
 % Karlo Hock, University of Queensland, v1 2014; v2 201
 
+% COTS-coral MICE (Model of Intermediate Complexity for Ecosystem Assessment) with intervention scenarios
 % Variable and parameter names used in Morello et al. paper are provided in comments;
 % in general, fgc stands for fast growing coral, and sgc for slow growing coral.
 % This is just a demo of the Matlab implementation; not to be used for scientific or management purposes; 
